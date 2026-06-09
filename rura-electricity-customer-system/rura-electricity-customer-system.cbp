@@ -32,6 +32,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Customer.cpp" />
+		<Unit filename="Customer.h" />
+		<Unit filename="LinearSearch.cpp" />
+		<Unit filename="Utilities.cpp" />
+		<Unit filename="Utilities.h" />
+		<Unit filename="customerClass.cpp" />
+		<Unit filename="customers.txt" />
+		<Unit filename="decisionTree.cpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
