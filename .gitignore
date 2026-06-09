@@ -1,0 +1,67 @@
+# Compiled executables
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+
+# Libraries
+*.lib
+*.a
+*.dll
+*.so
+*.dylib
+
+# Build folders
+bin/
+obj/
+build/
+Debug/
+Release/
+
+# Code::Blocks
+*.depend
+*.layout
+
+# Visual Studio
+.vs/
+*.vcxproj.user
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Doxygen output
+doxygen/html/
+doxygen/latex/
+
+# Build outputs (recursive safety)
+**/bin/
+**/obj/
+**/Debug/
+**/Release/
+
+# Doxygen generated docs
+**/doxygen/html/
+**/doxygen/latex/
+
+# Executables inside project folders
+*.exe
+
+# PDFs (optional)
+# *.pdf

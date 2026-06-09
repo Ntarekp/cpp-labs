@@ -1,0 +1,6 @@
+Index|Hospital Name
+1|CHUK
+2|King Faisal
+3|Butaro
+4|Kibagabaga
+5|Ruhengeri
