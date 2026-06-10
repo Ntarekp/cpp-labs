@@ -16,37 +16,41 @@
 #include <string>
 #include "Vehicle.h"
 
-class VehicleManager {
+class VehicleManager
+{
 private:
     // plate → Vehicle (active parked vehicles only)
     std::unordered_map<std::string, Vehicle> activeVehicles;
 
 public:
-    // ── Park a vehicle ─────────────────────────────────────────────────────────
+    // ---- Park a vehicle ----------------------------------------------------------------------------------------------------------------─
     // Returns false if plate is already parked
     bool parkVehicle(const std::string& plate,
                      VehicleType        vtype,
                      std::time_t        entryTime,
                      const std::string& slotId);
 
-    // ── Check if a vehicle is currently parked ─────────────────────────────────
+    // ---- Check if a vehicle is currently parked ----------------------------------------------------------------─
     bool isParked(const std::string& plate) const;
 
-    // ── Get active vehicle by plate ────────────────────────────────────────────
+    // ---- Get active vehicle by plate ----------------------------------------------------------------------------------------
     // Returns nullptr if not found
     const Vehicle* getVehicle(const std::string& plate) const;
 
-    // ── Remove vehicle on exit ─────────────────────────────────────────────────
+    // ---- Remove vehicle on exit ------------------------------------------------------------------------------------------------─
     // Returns false if plate not found
     bool removeVehicle(const std::string& plate);
 
-    // ── Display all currently parked vehicles ──────────────────────────────────
+    // ---- Display all currently parked vehicles --------------------------------------------------------------------
     void printParkedVehicles() const;
 
-    // ── Count active vehicles ──────────────────────────────────────────────────
-    int count() const { return static_cast<int>(activeVehicles.size()); }
+    // ---- Count active vehicles ----------------------------------------------------------------------------------------------------
+    int count() const
+    {
+        return static_cast<int>(activeVehicles.size());
+    }
 
-    // ── Persistence ───────────────────────────────────────────────────────────
+    // ---- Persistence --------------------------------------------------------------------------------------------------------------------─
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
 };

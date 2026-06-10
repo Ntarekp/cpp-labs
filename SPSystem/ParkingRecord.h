@@ -10,7 +10,8 @@
 #include <ctime>
 #include "types.h"
 
-class ParkingRecord {
+class ParkingRecord
+{
 private:
     std::string plate;
     VehicleType vehicleType;
@@ -22,7 +23,7 @@ private:
     double      feeCharged;     // Fee at time of exit (frozen)
 
 public:
-    // ── Constructor ───────────────────────────────────────────────────────────
+    // ---- Constructor --------------------------------------------------------------------------------------------------------------------─
     ParkingRecord(const std::string& plate,
                   VehicleType        vtype,
                   const std::string& slotId,
@@ -36,17 +37,41 @@ public:
           durationHours(hours), feeCharged(fee)
     {}
 
-    // ── Getters ───────────────────────────────────────────────────────────────
-    const std::string& getPlate()        const { return plate;         }
-    VehicleType        getVehicleType()  const { return vehicleType;   }
-    const std::string& getSlotId()       const { return slotId;        }
-    const std::string& getZone()         const { return zone;          }
-    std::time_t        getEntryTime()    const { return entryTime;     }
-    std::time_t        getExitTime()     const { return exitTime;      }
-    int                getDurationHours()const { return durationHours; }
-    double             getFeeCharged()   const { return feeCharged;    }
+    // ---- Getters ----------------------------------------------------------------------------------------------------------------------------─
+    const std::string& getPlate()        const
+    {
+        return plate;
+    }
+    VehicleType        getVehicleType()  const
+    {
+        return vehicleType;
+    }
+    const std::string& getSlotId()       const
+    {
+        return slotId;
+    }
+    const std::string& getZone()         const
+    {
+        return zone;
+    }
+    std::time_t        getEntryTime()    const
+    {
+        return entryTime;
+    }
+    std::time_t        getExitTime()     const
+    {
+        return exitTime;
+    }
+    int                getDurationHours()const
+    {
+        return durationHours;
+    }
+    double             getFeeCharged()   const
+    {
+        return feeCharged;
+    }
 
-    // ── Display helper ────────────────────────────────────────────────────────
+    // ---- Display helper ----------------------------------------------------------------------------------------------------------------
     void print() const;
 };
 

@@ -18,7 +18,8 @@
 #include <string>
 #include "ParkingSlot.h"
 
-class SlotManager {
+class SlotManager
+{
 private:
     // Primary store: slotId → ParkingSlot object
     std::unordered_map<std::string, ParkingSlot> slots;
@@ -28,33 +29,36 @@ private:
     std::map<VehicleType, std::vector<std::string>> slotIndex;
 
 public:
-    // ── Add a new slot ─────────────────────────────────────────────────────────
+    // ---- Add a new slot ----------------------------------------------------------------------------------------------------------------─
     // Returns false if slotId already exists
     bool addSlot(const std::string& slotId, VehicleType vtype, const std::string& zone);
 
-    // ── Find first available slot for a given vehicle type ─────────────────────
+    // ---- Find first available slot for a given vehicle type ----------------------------------------─
     // Returns pointer to slot or nullptr if none available
     ParkingSlot* findAvailableSlot(VehicleType vtype);
 
-    // ── Get slot by ID ─────────────────────────────────────────────────────────
+    // ---- Get slot by ID ----------------------------------------------------------------------------------------------------------------─
     ParkingSlot* getSlot(const std::string& slotId);
 
-    // ── Check if a slot ID already exists ─────────────────────────────────────
+    // ---- Check if a slot ID already exists ------------------------------------------------------------------------─
     bool slotExists(const std::string& slotId) const;
 
-    // ── Count available slots by type ─────────────────────────────────────────
+    // ---- Count available slots by type --------------------------------------------------------------------------------─
     int countAvailable(VehicleType vtype) const;
 
-    // ── Display all slots ──────────────────────────────────────────────────────
+    // ---- Display all slots ------------------------------------------------------------------------------------------------------------
     void printAllSlots() const;
 
-    // ── Display only available slots ──────────────────────────────────────────
+    // ---- Display only available slots ------------------------------------------------------------------------------------
     void printAvailableSlots() const;
 
-    // ── Total slot count ──────────────────────────────────────────────────────
-    int totalSlots() const { return static_cast<int>(slots.size()); }
+    // ---- Total slot count ------------------------------------------------------------------------------------------------------------
+    int totalSlots() const
+    {
+        return static_cast<int>(slots.size());
+    }
 
-    // ── Persistence ───────────────────────────────────────────────────────────
+    // ---- Persistence --------------------------------------------------------------------------------------------------------------------─
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
 };

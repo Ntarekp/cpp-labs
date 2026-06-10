@@ -16,7 +16,8 @@
 #include <string>
 #include "ParkingRecord.h"
 
-class HistoryManager {
+class HistoryManager
+{
 private:
     std::vector<ParkingRecord> history;
 
@@ -25,9 +26,12 @@ public:
     void printPlateHistory(const std::string& plate) const;
     void printAllHistory() const;
     void printDailyRevenue(const std::string& dateStr) const;
-    int count() const { return static_cast<int>(history.size()); }
+    int count() const
+    {
+        return static_cast<int>(history.size());
+    }
 
-    // ── Persistence ───────────────────────────────────────────────────────────
+    // ---- Persistence --------------------------------------------------------------------------------------------------------------------─
     void saveToFile(const std::string& filename) const;
     void loadFromFile(const std::string& filename);
 };

@@ -6,7 +6,8 @@
 #include <iomanip>
 #include <ctime>
 
-void ParkingRecord::print() const {
+void ParkingRecord::print() const
+{
     char entryBuf[32], exitBuf[32];
     std::tm* t1 = std::localtime(&entryTime);
     std::strftime(entryBuf, sizeof(entryBuf), "%Y-%m-%d %H:%M:%S", t1);

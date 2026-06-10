@@ -5,13 +5,15 @@
 #include <iostream>
 #include <iomanip>
 
-void TariffManager::printRates() const {
-    std::cout << "\n  ┌─────────────────────────────────────┐\n";
+void TariffManager::printRates() const
+{
+    std::cout << "\n  ┌------------------------------------------------------------------------─┐\n";
     std::cout << "  │        Current Parking Tariffs       │\n";
-    std::cout << "  ├──────────────────┬──────────────────┤\n";
+    std::cout << "  ├------------------------------------┬------------------------------------┤\n";
     std::cout << "  │  Vehicle Type    │  Rate (RWF/hr)   │\n";
-    std::cout << "  ├──────────────────┼──────────────────┤\n";
-    for (auto& pair : rates) {
+    std::cout << "  ├------------------------------------┼------------------------------------┤\n";
+    for (auto& pair : rates)
+    {
         std::cout << "  │  "
                   << std::left  << std::setw(16) << vehicleTypeToString(pair.first)
                   << "│  "
@@ -24,20 +26,24 @@ void TariffManager::printRates() const {
 
 #include <fstream>
 
-void TariffManager::saveToFile(const std::string& filename) const {
+void TariffManager::saveToFile(const std::string& filename) const
+{
     std::ofstream outFile(filename);
     if (!outFile) return;
-    for (const auto& pair : rates) {
+    for (const auto& pair : rates)
+    {
         outFile << static_cast<int>(pair.first) << " " << pair.second << "\n";
     }
 }
 
-void TariffManager::loadFromFile(const std::string& filename) {
+void TariffManager::loadFromFile(const std::string& filename)
+{
     std::ifstream inFile(filename);
     if (!inFile) return;
     int type;
     double rate;
-    while (inFile >> type >> rate) {
+    while (inFile >> type >> rate)
+    {
         rates[static_cast<VehicleType>(type)] = rate;
     }
 }

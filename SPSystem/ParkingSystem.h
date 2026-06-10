@@ -10,7 +10,8 @@
 #include "HistoryManager.h"   // HistoryManager + ParkingRecord  ← was MISSING
 #include "TariffManager.h"    // TariffManager
 
-class ParkingSystem {
+class ParkingSystem
+{
 private:
     SlotManager    slotMgr;
     VehicleManager vehicleMgr;

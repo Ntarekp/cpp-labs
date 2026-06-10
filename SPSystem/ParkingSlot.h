@@ -9,7 +9,8 @@
 #include <string>
 #include "types.h"
 
-class ParkingSlot {
+class ParkingSlot
+{
 private:
     std::string  slotId;       // Unique identifier, e.g. "A1", "B3"
     VehicleType  vehicleType;  // Which vehicle category this slot supports
@@ -17,7 +18,7 @@ private:
     SlotStatus   status;       // AVAILABLE or OCCUPIED
 
 public:
-    // ── Constructor ──────────────────────────────────────────────────────────
+    // ---- Constructor --------------------------------------------------------------------------------------------------------------------
     ParkingSlot(const std::string& id,
                 VehicleType       vtype,
                 const std::string& zoneLabel)
@@ -27,18 +28,39 @@ public:
           status(SlotStatus::AVAILABLE)   // all slots start as available
     {}
 
-    // ── Getters ──────────────────────────────────────────────────────────────
-    const std::string& getSlotId()     const { return slotId;      }
-    VehicleType        getVehicleType()const { return vehicleType;  }
-    const std::string& getZone()       const { return zone;         }
-    SlotStatus         getStatus()     const { return status;       }
-    bool               isAvailable()   const { return status == SlotStatus::AVAILABLE; }
+    // ---- Getters ----------------------------------------------------------------------------------------------------------------------------
+    const std::string& getSlotId()     const
+    {
+        return slotId;
+    }
+    VehicleType        getVehicleType()const
+    {
+        return vehicleType;
+    }
+    const std::string& getZone()       const
+    {
+        return zone;
+    }
+    SlotStatus         getStatus()     const
+    {
+        return status;
+    }
+    bool               isAvailable()   const
+    {
+        return status == SlotStatus::AVAILABLE;
+    }
 
-    // ── Status mutators ───────────────────────────────────────────────────────
-    void occupy()   { status = SlotStatus::OCCUPIED;  }
-    void release()  { status = SlotStatus::AVAILABLE; }
+    // ---- Status mutators ------------------------------------------------------------------------------------------------------------─
+    void occupy()
+    {
+        status = SlotStatus::OCCUPIED;
+    }
+    void release()
+    {
+        status = SlotStatus::AVAILABLE;
+    }
 
-    // ── Display helper ────────────────────────────────────────────────────────
+    // ---- Display helper ----------------------------------------------------------------------------------------------------------------
     void print() const;
 };
 

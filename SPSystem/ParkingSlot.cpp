@@ -5,7 +5,8 @@
 #include <iostream>
 #include <iomanip>
 
-void ParkingSlot::print() const {
+void ParkingSlot::print() const
+{
     std::cout << std::left
               << std::setw(8)  << slotId
               << std::setw(14) << vehicleTypeToString(vehicleType)

@@ -13,8 +13,9 @@
 #include <limits>
 #include "ParkingSystem.h"
 
-// ── Draw the main menu ────────────────────────────────────────────────────────
-static void printMenu() {
+// ---- Draw the main menu ----------------------------------------------------------------------------------------------------------------
+static void printMenu()
+{
     std::cout << R"(
   +------------------------------------------------+
   |    KIGALI SMART PARKING MANAGEMENT SYSTEM      |
@@ -46,7 +47,8 @@ static void printMenu() {
   Choice: )";
 }
 
-int main() {
+int main()
+{
     ParkingSystem system;   // Initialises with 9 default slots
     system.loadAllData();   // Attempt to load previously saved data
 
@@ -54,51 +56,80 @@ int main() {
     std::cout << "  System loaded with 9 default slots (4 Car, 3 Motorcycle, 2 Truck)\n";
 
     int choice = -1;
-    while (true) {
+    while (true)
+    {
         printMenu();
 
         // Robust integer read — rejects non-numeric input
         std::string input;
         std::getline(std::cin >> std::ws, input);
-        try {
+        try
+        {
             choice = std::stoi(input);
-        } catch (...) {
+        }
+        catch (...)
+        {
             choice = -1;
         }
 
         std::cout << "\n";
 
-        switch (choice) {
-            // ── Slot configuration ─────────────────────────────────────────
-            case 1:  system.configureSlot();       break;
-            case 2:  system.viewAllSlots();        break;
-            case 3:  system.viewAvailableSlots();  break;
+        switch (choice)
+        {
+        // ---- Slot configuration --------------------------------------------------------------------------------─
+        case 1:
+            system.configureSlot();
+            break;
+        case 2:
+            system.viewAllSlots();
+            break;
+        case 3:
+            system.viewAvailableSlots();
+            break;
 
-            // ── Vehicle operations ─────────────────────────────────────────
-            case 4:  system.registerEntry();       break;
-            case 5:  system.registerExit();        break;
+        // ---- Vehicle operations --------------------------------------------------------------------------------─
+        case 4:
+            system.registerEntry();
+            break;
+        case 5:
+            system.registerExit();
+            break;
 
-            // ── Tariff management ──────────────────────────────────────────
-            case 6:  system.viewTariffs();         break;
-            case 7:  system.updateTariff();        break;
+        // ---- Tariff management ------------------------------------------------------------------------------------
+        case 6:
+            system.viewTariffs();
+            break;
+        case 7:
+            system.updateTariff();
+            break;
 
-            // ── Reports ────────────────────────────────────────────────────
-            case 8:  system.reportParkedVehicles(); break;
-            case 9:  system.reportVehicleHistory(); break;
-            case 10: system.reportFullHistory();    break;
-            case 11: system.reportDailyRevenue();   break;
+        // ---- Reports --------------------------------------------------------------------------------------------------------
+        case 8:
+            system.reportParkedVehicles();
+            break;
+        case 9:
+            system.reportVehicleHistory();
+            break;
+        case 10:
+            system.reportFullHistory();
+            break;
+        case 11:
+            system.reportDailyRevenue();
+            break;
 
-            // ── Data Management ────────────────────────────────────────────
-            case 12: system.saveAllData();          break;
+        // ---- Data Management ----------------------------------------------------------------------------------------
+        case 12:
+            system.saveAllData();
+            break;
 
-            // ── Exit ───────────────────────────────────────────────────────
-            case 0:
-                system.saveAllData(); // Auto-save on exit
-                std::cout << "  Goodbye. Thank you for using Kigali Smart Parking.\n\n";
-                return 0;
+        // ---- Exit ------------------------------------------------------------------------------------------------------------─
+        case 0:
+            system.saveAllData(); // Auto-save on exit
+            std::cout << "  Goodbye. Thank you for using Kigali Smart Parking.\n\n";
+            return 0;
 
-            default:
-                std::cout << "  [!] Invalid option. Please choose 0–12.\n";
+        default:
+            std::cout << "  [!] Invalid option. Please choose 0–12.\n";
         }
 
         // Pause before redrawing menu

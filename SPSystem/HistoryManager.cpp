@@ -6,11 +6,13 @@
 #include <iomanip>
 #include <ctime>
 
-void HistoryManager::addRecord(const ParkingRecord& record) {
+void HistoryManager::addRecord(const ParkingRecord& record)
+{
     history.push_back(record);
 }
 
-void HistoryManager::printPlateHistory(const std::string& plate) const {
+void HistoryManager::printPlateHistory(const std::string& plate) const
+{
     bool found = false;
     std::cout << std::left
               << std::setw(16) << "Plate"
@@ -23,8 +25,10 @@ void HistoryManager::printPlateHistory(const std::string& plate) const {
               << "Fee" << "\n"
               << std::string(110, '-') << "\n";
 
-    for (const auto& record : history) {
-        if (record.getPlate() == plate) {
+    for (const auto& record : history)
+    {
+        if (record.getPlate() == plate)
+        {
             record.print();
             found = true;
         }
@@ -32,8 +36,10 @@ void HistoryManager::printPlateHistory(const std::string& plate) const {
     if (!found) std::cout << "  No history found for plate: " << plate << "\n";
 }
 
-void HistoryManager::printAllHistory() const {
-    if (history.empty()) {
+void HistoryManager::printAllHistory() const
+{
+    if (history.empty())
+    {
         std::cout << "  Parking history is empty.\n";
         return;
     }
@@ -48,22 +54,26 @@ void HistoryManager::printAllHistory() const {
               << "Fee" << "\n"
               << std::string(110, '-') << "\n";
 
-    for (const auto& record : history) {
+    for (const auto& record : history)
+    {
         record.print();
     }
 }
 
-void HistoryManager::printDailyRevenue(const std::string& dateStr) const {
+void HistoryManager::printDailyRevenue(const std::string& dateStr) const
+{
     double total = 0;
     int count = 0;
 
-    for (const auto& record : history) {
+    for (const auto& record : history)
+    {
         std::time_t exitTime = record.getExitTime();
         char buf[16];
         std::tm* tm_info = std::localtime(&exitTime);
         std::strftime(buf, sizeof(buf), "%Y-%m-%d", tm_info);
 
-        if (std::string(buf) == dateStr) {
+        if (std::string(buf) == dateStr)
+        {
             total += record.getFeeCharged();
             count++;
         }
@@ -77,10 +87,12 @@ void HistoryManager::printDailyRevenue(const std::string& dateStr) const {
 #include <fstream>
 #include <sstream>
 
-void HistoryManager::saveToFile(const std::string& filename) const {
+void HistoryManager::saveToFile(const std::string& filename) const
+{
     std::ofstream outFile(filename);
     if (!outFile) return;
-    for (const auto& r : history) {
+    for (const auto& r : history)
+    {
         // Format: Plate|Type|SlotId|Zone|Entry|Exit|Hours|Fee
         outFile << r.getPlate() << "|"
                 << static_cast<int>(r.getVehicleType()) << "|"
@@ -93,25 +105,28 @@ void HistoryManager::saveToFile(const std::string& filename) const {
     }
 }
 
-void HistoryManager::loadFromFile(const std::string& filename) {
+void HistoryManager::loadFromFile(const std::string& filename)
+{
     std::ifstream inFile(filename);
     if (!inFile) return;
 
     history.clear();
     std::string line;
-    while (std::getline(inFile, line)) {
+    while (std::getline(inFile, line))
+    {
         if (line.empty()) continue;
         std::stringstream ss(line);
         std::string plate, typeStr, slotId, zone, entryStr, exitStr, hoursStr, feeStr;
 
         if (std::getline(ss, plate, '|') &&
-            std::getline(ss, typeStr, '|') &&
-            std::getline(ss, slotId, '|') &&
-            std::getline(ss, zone, '|') &&
-            std::getline(ss, entryStr, '|') &&
-            std::getline(ss, exitStr, '|') &&
-            std::getline(ss, hoursStr, '|') &&
-            std::getline(ss, feeStr, '|')) {
+                std::getline(ss, typeStr, '|') &&
+                std::getline(ss, slotId, '|') &&
+                std::getline(ss, zone, '|') &&
+                std::getline(ss, entryStr, '|') &&
+                std::getline(ss, exitStr, '|') &&
+                std::getline(ss, hoursStr, '|') &&
+                std::getline(ss, feeStr, '|'))
+        {
 
             VehicleType vt = static_cast<VehicleType>(std::stoi(typeStr));
             std::time_t entry = static_cast<std::time_t>(std::stoll(entryStr));

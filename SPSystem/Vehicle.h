@@ -10,7 +10,8 @@
 #include <ctime>
 #include "types.h"
 
-class Vehicle {
+class Vehicle
+{
 private:
     std::string plate;       // Unique plate number, e.g. "RAB 123 A"
     VehicleType vehicleType; // Motorcycle / Car / Truck
@@ -18,7 +19,7 @@ private:
     std::string slotId;      // The slot this vehicle occupies
 
 public:
-    // ── Constructor ───────────────────────────────────────────────────────────
+    // ---- Constructor --------------------------------------------------------------------------------------------------------------------─
     Vehicle(const std::string& plateNum,
             VehicleType        vtype,
             std::time_t        entry,
@@ -29,13 +30,25 @@ public:
           slotId(assignedSlot)
     {}
 
-    // ── Getters ───────────────────────────────────────────────────────────────
-    const std::string& getPlate()       const { return plate;       }
-    VehicleType        getVehicleType() const { return vehicleType; }
-    std::time_t        getEntryTime()   const { return entryTime;   }
-    const std::string& getSlotId()      const { return slotId;      }
+    // ---- Getters ----------------------------------------------------------------------------------------------------------------------------─
+    const std::string& getPlate()       const
+    {
+        return plate;
+    }
+    VehicleType        getVehicleType() const
+    {
+        return vehicleType;
+    }
+    std::time_t        getEntryTime()   const
+    {
+        return entryTime;
+    }
+    const std::string& getSlotId()      const
+    {
+        return slotId;
+    }
 
-    // ── Display helper ────────────────────────────────────────────────────────
+    // ---- Display helper ----------------------------------------------------------------------------------------------------------------
     void print() const;
 };
 

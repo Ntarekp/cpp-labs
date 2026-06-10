@@ -8,27 +8,33 @@
 bool VehicleManager::parkVehicle(const std::string& plate,
                                  VehicleType        vtype,
                                  std::time_t        entryTime,
-                                 const std::string& slotId) {
+                                 const std::string& slotId)
+{
     if (activeVehicles.count(plate)) return false;
     activeVehicles.emplace(plate, Vehicle(plate, vtype, entryTime, slotId));
     return true;
 }
 
-bool VehicleManager::isParked(const std::string& plate) const {
+bool VehicleManager::isParked(const std::string& plate) const
+{
     return activeVehicles.count(plate) > 0;
 }
 
-const Vehicle* VehicleManager::getVehicle(const std::string& plate) const {
+const Vehicle* VehicleManager::getVehicle(const std::string& plate) const
+{
     auto it = activeVehicles.find(plate);
     return (it != activeVehicles.end()) ? &(it->second) : nullptr;
 }
 
-bool VehicleManager::removeVehicle(const std::string& plate) {
+bool VehicleManager::removeVehicle(const std::string& plate)
+{
     return activeVehicles.erase(plate) > 0;
 }
 
-void VehicleManager::printParkedVehicles() const {
-    if (activeVehicles.empty()) {
+void VehicleManager::printParkedVehicles() const
+{
+    if (activeVehicles.empty())
+    {
         std::cout << "  No vehicles currently parked.\n";
         return;
     }
@@ -39,7 +45,8 @@ void VehicleManager::printParkedVehicles() const {
               << std::setw(10) << "Slot ID"
               << "\n"
               << std::string(62, '-') << "\n";
-    for (const auto& pair : activeVehicles) {
+    for (const auto& pair : activeVehicles)
+    {
         pair.second.print();
     }
 }
@@ -47,10 +54,12 @@ void VehicleManager::printParkedVehicles() const {
 #include <fstream>
 #include <sstream>
 
-void VehicleManager::saveToFile(const std::string& filename) const {
+void VehicleManager::saveToFile(const std::string& filename) const
+{
     std::ofstream outFile(filename);
     if (!outFile) return;
-    for (const auto& pair : activeVehicles) {
+    for (const auto& pair : activeVehicles)
+    {
         const Vehicle& v = pair.second;
         // Format: Plate|Type|EntryTime|SlotId
         outFile << v.getPlate() << "|"
@@ -60,21 +69,24 @@ void VehicleManager::saveToFile(const std::string& filename) const {
     }
 }
 
-void VehicleManager::loadFromFile(const std::string& filename) {
+void VehicleManager::loadFromFile(const std::string& filename)
+{
     std::ifstream inFile(filename);
     if (!inFile) return;
 
     activeVehicles.clear();
     std::string line;
-    while (std::getline(inFile, line)) {
+    while (std::getline(inFile, line))
+    {
         if (line.empty()) continue;
         std::stringstream ss(line);
         std::string plate, typeStr, entryStr, slotId;
 
         if (std::getline(ss, plate, '|') &&
-            std::getline(ss, typeStr, '|') &&
-            std::getline(ss, entryStr, '|') &&
-            std::getline(ss, slotId, '|')) {
+                std::getline(ss, typeStr, '|') &&
+                std::getline(ss, entryStr, '|') &&
+                std::getline(ss, slotId, '|'))
+        {
 
             VehicleType vt = static_cast<VehicleType>(std::stoi(typeStr));
             std::time_t entry = static_cast<std::time_t>(std::stoll(entryStr));

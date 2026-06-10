@@ -7,7 +7,8 @@
 #include <iomanip>
 #include <ctime>
 
-void Vehicle::print() const {
+void Vehicle::print() const
+{
     // Format the entry time into a readable string
     char buf[32];
     std::tm* tm_info = std::localtime(&entryTime);
