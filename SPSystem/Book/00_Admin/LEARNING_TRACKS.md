@@ -176,4 +176,10 @@ Plus the 27 standard artifacts from `UNIVERSITY_CHARTER.md`.
 
 ---
 
-*Learning tracks version: 2.0 — construction-first reorder*
+## Section 22 — System Design Challenges
+
+Parallel design track. Unlocks **SDC-01 after SEC-05**. Does not replace SEC. See `22_System_Design_Challenges/ROADMAP.md`.
+
+---
+
+*Learning tracks version: 2.1 — frozen + SDC*

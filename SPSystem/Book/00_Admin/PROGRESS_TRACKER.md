@@ -25,7 +25,7 @@
 
 | ID | Topic | Status |
 |----|-------|--------|
-| SEC-01 | Source code → running program | `READY` ← **start here** |
+| SEC-01 | Source code → running program | `IN_PROGRESS` |
 | SEC-02 | Build systems | `LOCKED` |
 | SEC-03 | Headers & source files | `LOCKED` |
 | SEC-04 | Translation units | `LOCKED` |
@@ -81,6 +81,20 @@
 | M1b | Theory foundations | `NOT_STARTED` |
 | M2 | Merge complete | `NOT_STARTED` |
 | M3–M15 | See MILESTONES.md | `NOT_STARTED` |
+
+---
+
+## System Design Challenges (22)
+
+| Challenge | Status | Unlock |
+|-----------|--------|--------|
+| SDC-01 Parking | `LOCKED` | SEC-05 |
+| SDC-02 Inventory | `LOCKED` | SEC-08 |
+| SDC-03 Library | `LOCKED` | SEC-09 |
+| SDC-04 School | `LOCKED` | Merge |
+| SDC-05 Hospital | `LOCKED` | ARCH-02 |
+| SDC-06 Banking | `LOCKED` | DB-04 |
+| SDC-07 Network monitoring | `LOCKED` | NET-03 |
 
 ---
 

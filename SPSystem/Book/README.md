@@ -8,7 +8,7 @@
 |------|-------|
 | Charter | v2.0 — dual-track, construction-first |
 | Foundational documents | Complete |
-| First lesson | **SEC-01** (Track A) — awaiting `BEGIN SEC-01` |
+| First lesson | **SEC-01** — `IN_PROGRESS` |
 | Milestone | M0 Complete |
 
 ## Start Here
@@ -44,6 +44,9 @@
 | 18 | [Examinations](18_Examinations/) |
 | 19 | [Capstones](19_Capstones/) |
 | 20 | [Rebuild From Scratch](20_Rebuild_From_Scratch/) |
+| 22 | [System Design Challenges](22_System_Design_Challenges/) |
+
+**Curriculum architecture:** Frozen (v2.0 + Section 22).
 
 ## SPSystem
 
