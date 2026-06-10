@@ -1,0 +1,2 @@
+RegNumber      BusinessName             Type                Fee(RWF)       
+345            LegoTok                  Partnership         100000         
