@@ -1,10 +1,11 @@
 A1|1|Zone-A|0
 A2|1|Zone-A|0
 A3|1|Zone-A|0
+SLOT1|2|Economic-zone|0
 B1|0|Zone-B|0
-SLOTKABEZA-1|0|Zone A|0
-A4|1|Zone-A|1
-B2|0|Zone-B|0
-C1|2|Zone-C|0
-B3|0|Zone-B|0
 C2|2|Zone-C|0
+SLOTKABEZA-1|0|Zone A|0
+A4|1|Zone-A|0
+B2|0|Zone-B|0
+C1|2|Zone-C|1
+B3|0|Zone-B|0
