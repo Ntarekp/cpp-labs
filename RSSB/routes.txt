@@ -1,0 +1,9 @@
+Nbr   Route                                        Cost_MRWF
+1.    City of Kigali-Eastern Province              12.5
+2.    City of Kigali-Western Province              18.3
+3.    City of Kigali-Northern Province             14.7
+4.    City of Kigali-Southern Province             16.2
+5.    Eastern Province-Northern Province           22.8
+6.    Eastern Province-Southern Province           20.6
+7.    Western Province-Northern Province           25.1
+8.    Western Province-Southern Province           19.4

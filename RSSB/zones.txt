@@ -1,0 +1,7 @@
+Index   Zone_Name
+1       City of Kigali
+2       Eastern Province
+3       Western Province
+4       Northern Province
+5       Southern Province
+6       Kigali Economic Zone
