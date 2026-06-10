@@ -1,0 +1,90 @@
+INTEGRATED SITUATION
+Kigali City is experiencing serious challenges in its public parking areas due to
+a manual ticket-based parking system. Attendants issue paper tickets and
+record entries by hand, which often causes long queues at the entrance, poor
+allocation of parking spaces, and frequent disputes about parking fees.
+Because there is no real-time visibility of available slots, drivers waste time
+circulating, which increases congestion and reduces customer satisfaction. In
+addition, manual tracking creates opportunities for revenue leakage and
+makes daily reporting unreliable.
+To solve these problems, the Kigali City plans to introduce a Smart Parking
+Management System that provides real-time slot allocation and accurate
+billing. The system must automatically manage:
+● parking slot configuration and availability,
+● vehicle entry registration,
+● parking duration tracking and fee calculation,
+● vehicle exit and payment recording,
+● operational reports such as available slots, parked vehicles, vehicle
+history, and daily revenue.
+You have been hired as a Data Structure and Algorithms expert using C++ to
+design and implement this solution using in-memory data structures only (no
+database required). The system should be efficient and scalable, demonstrating
+correct use of Data Structures and Algorithms (DSA) and good OOP design
+practices.2.0 TASKS
+You are required to design and implement the system with the following
+minimum features:
+You are required to design and implement the system with the following five
+(5) tasks.
+Task 1: Parking Slot Configuration
+Design a mechanism to configure parking slots with the following minimum
+attributes:
+● Slot ID (unique)
+● Supported vehicle type (Motorcycle / Car / Truck)
+● Zone representing the location of the parking slot
+● Slot status (Available / Occupied)
+Requirements
+● Parking slots must be uniquely identified.
+● Slots must be stored using an appropriate data structure of your choice
+Task 2: Vehicle Entry Management
+Implement vehicle entry registration with:
+● Vehicle plate number (unique)
+● Vehicle type(Car, Truck, Motorcycle)
+● Entry time
+● Allocated parking slot
+Requirements
+● A vehicle cannot be parked more than once at the same time.
+● If no suitable parking slot is available, the system must handle the
+situation gracefully.
+● Students must choose appropriate data structures to manage vehicle
+records and slot assignments.Task 3: Parking Duration and Fee Calculation
+Implement logic to:
+● Calculate parking duration based on entry and exit time
+● Apply parking rates based on vehicle type
+● Compute the total parking fee
+● Allow update of parking price
+● Price updates must not affect previously completed parking records.
+Rules
+1. The system must start with default hourly parking prices for each vehicle
+type.
+2. The system must provide a controlled option to update parking prices
+while the program is running.
+3. Parking fees must always be calculated using the current active prices at
+the time of vehicle exit.
+4. Price updates must not affect already completed parking transactions
+recorded in history.
+Default starting Tariffs
+● Motorcycle: 500 RWF per hour
+● Car: 1,000 RWF per hour
+● Parking fees must be calculated only when a vehicle exits.
+● Partial hours must be charged as full hours.(15 Minutes is billed as
+hour, 1hour 20 is billed as 2 hours)
+Task 4: Vehicle Exit and Parking Update
+Implement vehicle exit handling to:
+● Release the occupied parking slot
+● Calculate and display the parking fee● Update all relevant system records
+● Store parking transaction details for future reference
+INSTRUCTIONS ON DESIGN AND DSA REQUIREMENTS
+● Design the system architecture and identify core system components
+● Select and apply linear and/or non-linear data structures
+● Justify each data structure choice based on required operations
+● Correctly implement insertion, deletion, update, and traversal operations
+● Apply OOP principles (encapsulation, abstraction, inheritance,
+polymorphism)
+● Validate inputs and handle exceptional cases gracefully
+● User interactions must be handled through a menu-driven or
+console-based interface, and test inputs must be provided to
+demonstrate all system functionalities
+● A short README or usage note must be included explaining how to
+compile/run the program, the default parking rates, and how to use the
+menu options.
+● Internet access is not allowed during the assessment.
